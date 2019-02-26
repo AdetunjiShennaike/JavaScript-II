@@ -88,8 +88,26 @@ contains('yo-yo',items,function(answer){
 
 /* STRETCH PROBLEM */
 
+const items2 = ['Pencil', 'Notebook', 'yo-yo', 'Gum','Pencil', 'Notebook', 'yo-yo', 'Gum', 'Snacks'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+let narray = [];
+
+for (let i = 0;i < array.length; i++) {
+  narray.push(array[i]);
+  for (let j = 1;j < array.length; j++){  
+    if (narray[i] === narray[j]){
+       narray.pop();
+      break;
+    }
+  }
+}  
+
+return cb(narray);
 }
+removeDuplicates(items2, function(narray){
+  console.log(narray);
+});
