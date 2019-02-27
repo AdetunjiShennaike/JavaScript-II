@@ -98,10 +98,12 @@ let narray = [];
 
 for (let i = 0;i < array.length; i++) {
   narray.push(array[i]);
-  for (let j = 1;j < array.length; j++){  
-    if (narray[i] === narray[j]){
-       narray.pop();
-      break;
+  if (i != 0){
+    for (let j = 0;j < (narray.length -1); j++){  
+      if (array[i] === narray[j]){
+        narray.pop();
+        break;
+      }
     }
   }
 }  
